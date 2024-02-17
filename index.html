@@ -64,7 +64,7 @@
             <p class="lg:text-lg mb-10 text-white inter-font">Yes, you can run unit tests and view the results directly
                 within the
                 app. The <br>integrated testing features allow for a streamlined .</p>
-            <button class="btn btn-success bg-[#1DD100] ">Buy Tickets</button>
+            <a href="#buying-ticket" class="btn btn-success bg-[#66c957]">Buy Tickets</a>
 
         </div>
         <div class="lg:flex lg:absolute lg:top-[95%] lg:left-[18%] gap-16 text-center">
@@ -132,8 +132,8 @@
                 </div>
             </div>
 
-            <button class="lg:mt-10 btn btn-success text-[#1DD100] bg-white border-2 border-[#1DD100]">Buy
-                Tickets</button>
+            <button class="lg:mt-10 btn btn-success text-[#1DD100] bg-white border-2 border-[#1DD100]">See All
+                Offers</button>
         </div>
         <div class="text-center mt-10 pt-10 bg-white border-t-2 border-[#1DD100] "
             style="border-radius: 88px 88px 0px 0px;">
@@ -173,9 +173,9 @@
                         </h2>
                     </div>
                     <div class=" mt-12">
-                        <div class="btn m-5">Boarding Point - Laxmipur</div>
-                        <div class="btn m-5">Dropping Point - Bogura</div>
-                        <div class="btn m-5">Est. Time - 11 Hour</div>
+                        <div class="btn m-5 bg-[#0307120D]">Boarding Point - Laxmipur</div>
+                        <div class="btn m-5 bg-[#0307120D]">Dropping Point - Bogura</div>
+                        <div class="btn m-5 bg-[#0307120D]">Est. Time - 11 Hour</div>
                     </div>
                 </div>
 
@@ -193,7 +193,7 @@
 
         </div>
 
-        <div class="md:flex justify-between items-center bg-white mt-10 ">
+        <div id="buying-ticket" class="md:flex justify-between items-center bg-white mt-10 ">
             <div class="border-r-2 border-dashed border-[#0307124D] flex-1 px-12">
                 <h5 class="text-lg font-normal">Select Your Seat</h5>
                 <div class="flex justify-between items-center border-[#03071233] border-y-2 border-dashed py-2">
@@ -215,59 +215,79 @@
 
                         <div class="grid grid-cols-3 items-center gap-6">
                             <p class="text-[#03071280]">A</p>
-                            <button id="A1" class="btn rounded-xl text-[#03071280] px-6 py-4">A1</button>
-                            <button id="A2" class="btn rounded-xl text-[#03071280] px-6 py-4 ">A2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="A1"
+                                class="btn rounded-xl text-[#03071280] px-6 py-4">A1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="A2"
+                                class="btn rounded-xl text-[#03071280] px-6 py-4 ">A2</button>
                             <p class="text-[#03071280] ">B</p>
-                            <button id="B1" class="btn  rounded-xl text-[#03071280] px-6 py-4">B1</button>
-                            <button id="B2" class="btn  rounded-xl text-[#03071280] px-6 py-4">B2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="B1"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">B1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="B2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">B2</button>
                             <p class="text-[rgba(3,7,18,0.5)]">C</p>
-                            <button id="C1" class="btn rounded-xl text-[#03071280] px-6 py-4">C1</button>
-                            <button id="C2" class="btn  rounded-xl text-[#03071280] px-6 py-4">C2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="C1"
+                                class="btn rounded-xl text-[#03071280] px-6 py-4">C1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="C2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">C2</button>
                             <p class="text-[#03071280] ">D</p>
-                            <button id="D1" class="btn  rounded-xl text-[#03071280] px-6 py-4">D1</button>
-                            <button id="D2" class="btn  rounded-xl text-[#03071280] px-6 py-4">D2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="D1"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">D1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="D2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">D2</button>
                             <p class="text-[#03071280] ">E</p>
-                            <button id="E1" class="btn rounded-xl text-[#03071280] px-6 py-4">E1</button>
-                            <button id="E2" class="btn  rounded-xl text-[#03071280] px-6 py-4">E2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="E1"
+                                class="btn rounded-xl text-[#03071280] px-6 py-4">E1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="E2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">E2</button>
                             <p class="text-[#03071280] ">F</p>
-                            <button id="F1" class="btn  rounded-xl text-[#03071280] px-6 py-4">F1</button>
-                            <button id="F2" class="btn  rounded-xl text-[#03071280] px-6 py-4">F2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="F1"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">F1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="F2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">F2</button>
                             <p class="text-[#03071280] ">G</p>
-                            <button id="G1" class="btn rounded-xl text-[#03071280] px-6 py-4">G1</button>
-                            <button id="G2" class="btn  rounded-xl text-[#03071280] px-6 py-4">G2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="G1"
+                                class="btn rounded-xl text-[#03071280] px-6 py-4">G1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="G2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">G2</button>
                             <p class="text-[#03071280] ">H</p>
-                            <button id="H1" class="btn  rounded-xl text-[#03071280] px-6 py-4">H1</button>
-                            <button id="H2" class="btn  rounded-xl text-[#03071280] px-6 py-4">H2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="H1"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">H1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="H2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">H2</button>
                             <p class="text-[#03071280] ">I</p>
-                            <button id="I1" class="btn rounded-xl text-[#03071280] px-6 py-4">I1</button>
-                            <button id="I2" class="btn  rounded-xl text-[#03071280] px-6 py-4">I2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="I1"
+                                class="btn rounded-xl text-[#03071280] px-6 py-4">I1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="I2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">I2</button>
                             <p class="text-[#03071280]">J</p>
-                            <button id="J1" class="btn  rounded-xl text-[#03071280] px-6 py-4">J1</button>
-                            <button id="J2" class="btn  rounded-xl text-[#03071280] px-6 py-4">J2</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="J1"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">J1</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="J2"
+                                class="btn  rounded-xl text-[#03071280] px-6 py-4">J2</button>
 
                         </div>
                         <div class="grid grid-cols-2 items-center gap-6">
 
-                            <button id="A3" class="btn rounded-xl text-[#03071280] px-6 py-4">A3</button>
-                            <button id="A4" class="btn  rounded-xl text-[#03071280] px-6 py-4">A4</button>
-                            <button id="B3" class="btn  rounded-xl text-[#03071280] px-6 py-4">B3</button>
-                            <button id="B4" class="btn  rounded-xl text-[#03071280] px-6 py-4">B4</button>
-                            <button id="C3" class="btn rounded-xl text-[#03071280] px-6 py-4">C3</button>
-                            <button id="C4" class="btn  rounded-xl text-[#03071280] px-6 py-4">C4</button>
-                            <button id="D3" class="btn  rounded-xl text-[#03071280] px-6 py-4">D3</button>
-                            <button id="D4" class="btn  rounded-xl text-[#03071280] px-6 py-4">D4</button>
-                            <button id="E3" class="btn rounded-xl text-[#03071280] px-6 py-4">E3</button>
-                            <button id="E4" class="btn  rounded-xl text-[#03071280] px-6 py-4">E4</button>
-                            <button id="F3" class="btn  rounded-xl text-[#03071280] px-6 py-4">F3</button>
-                            <button id="F4" class="btn  rounded-xl text-[#03071280] px-6 py-4">F4</button>
-                            <button id="G3" class="btn rounded-xl text-[#03071280] px-6 py-4">G3</button>
-                            <button id="G4" class="btn  rounded-xl text-[#03071280] px-6 py-4">G4</button>
-                            <button id="H3" class="btn  rounded-xl text-[#03071280] px-6 py-4">H3</button>
-                            <button id="H4" class="btn  rounded-xl text-[#03071280] px-6 py-4">H4</button>
-                            <button id="I3" class="btn rounded-xl text-[#03071280] px-6 py-4">I3</button>
-                            <button id="I4" class="btn  rounded-xl text-[#03071280] px-6 py-4">I4</button>
-                            <button id="J3" class="btn  rounded-xl text-[#03071280] px-6 py-4">J3</button>
-                            <button id="J4" class="btn  rounded-xl text-[#03071280] px-6 py-4">J4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="A3" class="btn rounded-xl text-[#03071280] px-6 py-4">A3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="A4" class="btn  rounded-xl text-[#03071280] px-6 py-4">A4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="B3" class="btn  rounded-xl text-[#03071280] px-6 py-4">B3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="B4" class="btn  rounded-xl text-[#03071280] px-6 py-4">B4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="C3" class="btn rounded-xl text-[#03071280] px-6 py-4">C3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="C4" class="btn  rounded-xl text-[#03071280] px-6 py-4">C4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="D3" class="btn  rounded-xl text-[#03071280] px-6 py-4">D3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="D4" class="btn  rounded-xl text-[#03071280] px-6 py-4">D4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="E3" class="btn rounded-xl text-[#03071280] px-6 py-4">E3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="E4" class="btn  rounded-xl text-[#03071280] px-6 py-4">E4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="F3" class="btn  rounded-xl text-[#03071280] px-6 py-4">F3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="F4" class="btn  rounded-xl text-[#03071280] px-6 py-4">F4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="G3" class="btn rounded-xl text-[#03071280] px-6 py-4">G3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="G4" class="btn  rounded-xl text-[#03071280] px-6 py-4">G4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="H3" class="btn  rounded-xl text-[#03071280] px-6 py-4">H3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="H4" class="btn  rounded-xl text-[#03071280] px-6 py-4">H4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="I3" class="btn rounded-xl text-[#03071280] px-6 py-4">I3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="I4" class="btn  rounded-xl text-[#03071280] px-6 py-4">I4</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="J3" class="btn  rounded-xl text-[#03071280] px-6 py-4">J3</button>
+                            <button onclick="changeColor(event)" ondblclick="removeBackgroundColor(event)" id="J4" class="btn  rounded-xl text-[#03071280] px-6 py-4">J4</button>
 
                         </div>
                     </div>
