@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus ticketing</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="px-0 md:px-3 lg:px-8 raleway-font">
+    <header class="relative">
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden px-0 lg:px-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl px-0">BusPass</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a
+                        class="btn border-1 border-[#1DD100] border-opacity-40 bg-[#1DD100] bg-opacity-10 rounded-xl  hover:bg-yellow-200">Bus
+                        <img src="images/bus-icon.png" alt=""></a>
+                </div>
+            </div>
+        </nav>
+        <div class="bg-slate-600 rounded-3xl pb-40 text-center bg-no-repeat bg-cover  bg-center"
+            style="background-image: url('images/banner.png');">
+            <h1 class=" text-3xl md:text-5xl lg:text-7xl text-white  pt-20">End-to-End Travel</h1>
+            <h3 class="text-3xl md:text-5xl lg:text-7xl text-[#1DD100] py-2">with BusPass</h3>
+            <p class="lg:text-lg mb-10 text-white inter-font">Yes, you can run unit tests and view the results directly within the
+                app. The <br>integrated testing features allow for a streamlined .</p>
+            <button class="btn btn-success bg-[#1DD100] ">Buy Tickets</button>
+
+        </div>
+        <div class="lg:flex lg:absolute lg:top-[95%] lg:left-[18%] gap-16 text-center">
+            <div class="bg-white flex gap-4 border-b-2 border-[#1DD100] rounded-3xl px-10 py-8  justify-center">
+
+                <img src="images/people.png" alt="">
+                <div>
+                    <h2 class="text-4xl inter-font font-bold">500K+</h2>
+                    <p class="inter-font">Registered users</p>
+                </div>
+            </div>
+            <div class="bg-white flex gap-4 border-b-2 border-[#1DD100] rounded-3xl px-10 py-8 justify-center">
+
+                <img src="images/ticket-cupon.png" alt="">
+                <div>
+                    <h2 class="text-4xl inter-font font-bold">1.7 lacks</h2>
+                    <p class="inter-font">Tickets sold</p>
+                </div>
+            </div>
+            <div class="bg-white flex gap-4 border-b-2 border-[#1DD100] rounded-3xl px-10 py-8 justify-center">
+
+                <img src="images/stoppage.png" alt="">
+                <div>
+                    <h2 class="text-4xl  inter-font font-bold">80K+</h2>
+                    <p class="inter-font ">Rental partners</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main class="lg:mt-32 mt-8">
+        <div class=" text-center">
+            <h2 class="text-4xl">Best offers for you</h2>
+        </div>
+
+    </main>
+    <footer></footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
