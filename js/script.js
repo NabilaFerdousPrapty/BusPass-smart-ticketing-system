@@ -28,6 +28,21 @@ function selectingToBuying(elementId) {
     document.getElementById("seat-count").innerText=seatBookingCount;
     document.getElementById("total-price").innerText=totalPrice;
     document.getElementById("grand-total").innerText=grandTotal;
+
+   const ticketTable=document.getElementById("ticket-table");
+   const newRow=document.createElement("tr");
+   const cell1=document.createElement("td");
+   cell1.innerText=elementId;
+   const cell2=document.createElement("td");
+   cell2.innerText="Economy";
+   const cell3=document.createElement("td");
+   cell3.innerText="550";
+   newRow.appendChild(cell1);
+   newRow.appendChild(cell2);
+   newRow.appendChild(cell3);
+
+   ticketTable.querySelector("tbody").appendChild(newRow)
+
     // console.log("Seat reserved successfully for button:", elementId);
     // console.log("Available Seats:", availableSeat);
     // console.log("Seat Booking Count:", seatBookingCount);
