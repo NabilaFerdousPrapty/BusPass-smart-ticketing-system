@@ -12,47 +12,40 @@ function getElementIdByEvent(event) {
   const elementId = event.target.id;
   selectingToBuying(elementId);
 }
-
 function selectingToBuying(elementId) {
-  if (!buttonClicked[elementId] && seatBookingCount < 4) {
-    buttonClicked[elementId] = true;
-    const element = document.getElementById(elementId);
-    element.classList.add("bg-[#1DD100]");
+  if (!buttonClicked[elementId]) {
+    if (seatBookingCount < 4) {
+      buttonClicked[elementId] = true;
+      const element = document.getElementById(elementId);
+      element.classList.add("bg-[#1DD100]");
 
-    availableSeat--;
-    seatBookingCount++;
-    totalPrice = seatBookingCount * oneTicketPrice;
-    grandTotal = totalPrice - discountPercentage * totalPrice;
+      availableSeat--;
+      seatBookingCount++;
+      totalPrice = seatBookingCount * oneTicketPrice;
+      grandTotal = totalPrice - discountPercentage * totalPrice;
 
-    document.getElementById("available").innerText = availableSeat;
-    document.getElementById("seat-count").innerText = seatBookingCount;
-    document.getElementById("total-price").innerText = totalPrice;
-    document.getElementById("grand-total").innerText = grandTotal;
+      document.getElementById("available").innerText = availableSeat;
+      document.getElementById("seat-count").innerText = seatBookingCount;
+      document.getElementById("total-price").innerText = totalPrice;
+      document.getElementById("grand-total").innerText = grandTotal;
 
-    const ticketTable = document.getElementById("ticket-table");
-    const newRow = document.createElement("tr");
-    const cell1 = document.createElement("td");
-    cell1.innerText = elementId;
-    const cell2 = document.createElement("td");
-    cell2.innerText = "Economy";
-    const cell3 = document.createElement("td");
-    cell3.innerText = "550";
-    newRow.appendChild(cell1);
-    newRow.appendChild(cell2);
-    newRow.appendChild(cell3);
+      const ticketTable = document.getElementById("ticket-table");
+      const newRow = document.createElement("tr");
+      const cell1 = document.createElement("td");
+      cell1.innerText = elementId;
+      const cell2 = document.createElement("td");
+      cell2.innerText = "Economy";
+      const cell3 = document.createElement("td");
+      cell3.innerText = "550";
+      newRow.appendChild(cell1);
+      newRow.appendChild(cell2);
+      newRow.appendChild(cell3);
 
-    ticketTable.querySelector("tbody").appendChild(newRow);
-
-    // console.log("Seat reserved successfully for button:", elementId);
-    // console.log("Available Seats:", availableSeat);
-    // console.log("Seat Booking Count:", seatBookingCount);
-    // console.log("Total Price:", totalPrice);
-    // console.log("Grand Total:", grandTotal);
-  } else if (seatBookingCount > 4) {
-    alert("You cannot buy more than 4 tickets at once");
-  } else {
-    alert("You have already selected this seat");
-  }
+      ticketTable.querySelector("tbody").appendChild(newRow);
+    } else {
+      alert("You cannot buy more than 4 tickets at once");
+    }
+  } 
 }
 
 // function removeSelection(elementId) {
@@ -183,7 +176,7 @@ document
     const nextButton = document.getElementById("next");
     if (numberLength > 0 && seatBookingCount > 0) {
       nextButton.removeAttribute("disabled");
-      startOver();
+      
     } else {
       nextButton.setAttribute("disabled", true);
     }
@@ -195,9 +188,10 @@ document
     const buttons = document.querySelectorAll(".buy-button");
     buttons.forEach(function(button) {
       button.classList.remove('bg-[#1DD100]');
+      
     });
-  }
-  
+}
+
 function startOver() {
   document.getElementById("available").innerText =40;
   document.getElementById("seat-count").innerText = 0;
@@ -205,6 +199,14 @@ function startOver() {
   document.getElementById("grand-total").innerText = 0;
   document.getElementById("table-body").innerText=" ";
   removeBgColorFromButtons();
+ const parentDiv=  document.getElementById("total-div");
+ const lastChild = parentDiv.lastElementChild;
+ parentDiv.removeChild(lastChild);
+  buttonClicked = {};
+  availableSeat=40;
+  seatBookingCount=0;
+ 
+  
   // document.getElementById("passenger-name").value=" ";
   // document.getElementById("passenger-phone").value=" ";
   // document.getElementById("passenger-email").value=" ";
