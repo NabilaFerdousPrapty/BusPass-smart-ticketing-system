@@ -154,7 +154,7 @@
                     </div>
                     <div class="md:flex flex-col items-center bg-[#1DD10026] inter-font px-5 py-3 rounded-xl">
                         <img src="images/seat-green.png" alt="">
-                        <p>40 Seats left</p>
+                        <p><span id="available">40 </span>Seats left</p>
                     </div>
                 </div>
                 <div class=" bg-[#F7F8F8] p-5 rounded-lg">
@@ -326,20 +326,7 @@
                 </h5>
 
                 <div class="bg-[#F7F8F8] pt-8 border-t-2  p-6">
-                    <!-- <div class="grid grid-cols-3 my-5 border-b-2 border-dashed pb-4">
-                        <div class="">
-
-                            <p class="inline">Seat</p>
-                            <p class=" badge bg-[#1DD100] inline">2</p>
-                        </div>
-                        <div>
-                            <p>Class</p>
-                        </div>
-                        <div>
-                            <p>Price</p>
-                        </div>
-
-                    </div> -->
+                    
                     <div class="overflow-x-auto border-b-2 border-[#03071233] border-dashed">
                         <table class="table">
                           <!-- head -->
@@ -347,7 +334,7 @@
                             <tr>
                               <th></th>
                               <th><p class="inline">Seat</p>
-                                <p class=" badge bg-[#1DD100] inline">2</p></th>
+                                <p id="seat-count" class=" badge bg-[#1DD100] inline">0</p></th>
                               <th> <p>Class</p></th>
                               <th> <p>Price</p></th>
                             </tr>
@@ -364,16 +351,16 @@
                     <div class="pt-4  border-[#03071233]">
                         <div class="flex justify-between items-center text-base">
                             <h2 class="text-2xl ">Total Price</h2>
-                            <p>1000</p>
+                            <p id="total-price">0</p>
                         </div>
-                        <div class="relative w-full m-auto lg:ml-14 mt-5">
-                            <input type="text" placeholder="Have any copupon?"
-                                class="input input-bordered w-full max-w-xs bg-white" /><button
-                                class="btn bg-[#1DD100] absolute lg:left-64 md:left-48 left-3/4 disabled:">Apply</button>
+                        <div class="relative w-full m-auto lg:ml-14 mt-5" id="discount-div">
+                            <input type="text" placeholder="Have any coupon?"
+                               id="coupon" class="input input-bordered w-full max-w-xs bg-white" /><button
+                                class="btn bg-[#1DD100] absolute lg:left-64 md:left-48 left-3/4 " id="coupon-btn"  >Apply</button>
                         </div>
                         <div class="flex justify-between items-center py-6 text-base">
                             <h2 class="text-2xl ">Grand Total</h2>
-                            <p>1000</p>
+                            <p id="grand-total">0</p>
                         </div>
                     </div>
                     <div>

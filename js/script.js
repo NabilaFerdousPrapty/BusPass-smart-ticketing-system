@@ -18,15 +18,21 @@ function selectingToBuying(elementId) {
     buttonClicked[elementId] = true;
     const element = document.getElementById(elementId);
     element.classList.add("bg-[#1DD100]");
+
     availableSeat--;
     seatBookingCount++;
-    totalPrice = seatBookingCount * oneTicketPrice;
-    grandTotal = totalPrice - discountPercentage * totalPrice;
-    console.log("Seat reserved successfully for button:", elementId);
-    console.log("Available Seats:", availableSeat);
-    console.log("Seat Booking Count:", seatBookingCount);
-    console.log("Total Price:", totalPrice);
-    console.log("Grand Total:", grandTotal);
+    totalPrice = seatBookingCount*oneTicketPrice;
+    grandTotal = totalPrice - discountPercentage*totalPrice;
+
+    document.getElementById("available").innerText=availableSeat;
+    document.getElementById("seat-count").innerText=seatBookingCount;
+    document.getElementById("total-price").innerText=totalPrice;
+    document.getElementById("grand-total").innerText=grandTotal;
+    // console.log("Seat reserved successfully for button:", elementId);
+    // console.log("Available Seats:", availableSeat);
+    // console.log("Seat Booking Count:", seatBookingCount);
+    // console.log("Total Price:", totalPrice);
+    // console.log("Grand Total:", grandTotal);
   }else{
     alert('You cannot buy more than 4 tickets at once')
   }
@@ -66,12 +72,45 @@ buttons.forEach(function (button) {
     //     removeSelection(elementId);
     // });
 });
+
+document.getElementById("coupon").addEventListener("keyup",function (event) {
+  
+  const coupon = event.target.value;
+  console.log("Coupon entered:", coupon);
+  const length=coupon.length;
+  console.log("Coupon length:", length);
+  const couponBtn=document.getElementById("coupon-btn");
+  const discountDiv=document.getElementById("discount-div");
+  if (coupon=="New15" || coupon=="Couple 20") {
+    couponBtn.removeAttribute("disabled");
+    if (coupon=="New15") {
+      discountPercentage=.15;
+      grandTotal=totalPrice-discountPercentage*totalPrice;
+      document.getElementById("grand-total").innerText=grandTotal;
+      couponBtn.onclick =discountDiv.classList.add("hidden");
+      
+     } else if (coupon=="Couple 20") {
+      discountPercentage=.20;
+      grandTotal=totalPrice-discountPercentage*totalPrice;
+      document.getElementById("grand-total").innerText=grandTotal;
+      discountDiv.classList.add("hidden");
+      
+     }else{
+      alert("The coupon code does not exist.Please try again")
+     }
+  }else{
+    couponBtn.setAttribute("disabled",true)
+  }
+})
+
+
 document
   .getElementById("phone-number")
   .addEventListener("keyup", function (event) {
     const number = event.target.value;
     const stringNumber = String(number);
     const numberLength = stringNumber.length;
+    console.log(stringNumber);
     const nextButton = document.getElementById("next");
     if (numberLength > 0) {
       nextButton.removeAttribute("disabled");
