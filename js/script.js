@@ -18,6 +18,7 @@ function selectingToBuying(elementId) {
       buttonClicked[elementId] = true;
       const element = document.getElementById(elementId);
       element.classList.add("bg-[#1DD100]");
+      element.classList.add("text-white");
 
       availableSeat--;
       seatBookingCount++;
@@ -86,6 +87,8 @@ buttons.forEach(function (button) {
 document.getElementById("coupon").addEventListener("focus", function (event) {
   const couponInput = event.target;
   couponInput.dataset.previousValue = couponInput.value;
+  const couponBtn = document.getElementById("coupon-btn");
+  couponBtn.removeAttribute("disabled");
 });
 document.getElementById("coupon").addEventListener("blur", function (event) {
   const couponInput = event.target;
@@ -151,17 +154,16 @@ function validateCoupon(coupon) {
       );
       discountDiv.classList.add("hidden");
       document.getElementById("coupon").value = " ";
-    } else {
-      alert("The coupon code does not exist.Please try again");
-      document.getElementById("coupon").value = " ";
-    }
+    } 
   } else if (seatBookingCount != 4) {
     console.log(seatBookingCount);
     alert("Buy at least 4 tickets to avail the coupon");
     document.getElementById("coupon").value = " ";
-    couponBtn.setAttribute("disabled", true);
+    
   } else {
-    couponBtn.setAttribute("disabled", true);
+    document.getElementById("coupon").value = " ";
+    alert("The coupon code does not exist.Please try again");
+    
   }
 }
 
@@ -198,6 +200,7 @@ document.getElementById("next").addEventListener("click",function () {
     const buttons = document.querySelectorAll(".buy-button");
     buttons.forEach(function(button) {
       button.classList.remove('bg-[#1DD100]');
+      button.classList.remove('text-white')
       
     });
 }
@@ -217,9 +220,9 @@ function startOver() {
   nextButton.setAttribute("disabled", true);
  
   
-  // document.getElementById("passenger-name").value=" ";
-  // document.getElementById("passenger-phone").value=" ";
-  // document.getElementById("passenger-email").value=" ";
+  document.getElementById("passenger-name").value=" ";
+  document.getElementById("passenger-phone").value=" ";
+  document.getElementById("passenger-email").value=" ";
   
   
 
