@@ -135,7 +135,7 @@ function validateCoupon(coupon) {
     } else if (coupon == "Couple 20") {
       discountPercentage = 0.2;
       grandTotal = totalPrice - discountPercentage * totalPrice;
-      document.getElementById("grand-total").innerText = grandTotal;
+      document.getElementById("grand-total").innerText = grandTotal.toFixed(2);
       const division = document.getElementById("discount-amount");
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
@@ -218,8 +218,10 @@ function startOver() {
   seatBookingCount=0;
   const nextButton = document.getElementById("next");
   nextButton.setAttribute("disabled", true);
- 
-  
+  const discountDiv = document.getElementById("discount-div");
+  discountDiv.classList.remove("hidden");
+  const couponBtn = document.getElementById("coupon-btn");
+  couponBtn.setAttribute("disabled");
   document.getElementById("passenger-name").value=" ";
   document.getElementById("passenger-phone").value=" ";
   document.getElementById("passenger-email").value=" ";
