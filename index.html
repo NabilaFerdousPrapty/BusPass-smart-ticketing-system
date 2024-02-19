@@ -361,31 +361,34 @@
                                 class="btn bg-[#1DD100] absolute lg:left-64 md:left-48 left-3/4 "
                                 id="coupon-btn">Apply</button>
                         </div>
+                        <div id="discount-amount">
+
+                        </div>
                         <div id="" class="flex justify-between items-center py-6 text-base">
                             <h2 class="text-2xl ">Grand Total</h2>
                             <p id="grand-total">0</p>
                         </div>
                     </div>
                     <div>
-                        <div class="form-control">
+                        <div >
                             <label class="label">
                                 <span class="label-text">Passenger Name*</span>
                             </label>
-                            <input type="text" placeholder="Enter your name" class="input input-bordered" />
+                            <input type="text" placeholder="Enter your name" class="input input-bordered w-full" id="passenger-name" required/>
                         </div>
-                        <div class="form-control">
+                        <div >
                             <label class="label">
                                 <span class="label-text">Phone Number*</span>
                             </label>
-                            <input id="phone-number" type="number" placeholder="Enter your phone number"
-                                class="input input-bordered" required />
+                            <input id="passenger-phone" type="number" placeholder="Enter your phone number"
+                                class="input input-bordered w-full" required />
                         </div>
-                        <div class="form-control">
+                        <div>
                             <label class="label">
                                 <span class="label-text">Email ID</span>
                             </label>
-                            <input type="email" placeholder="Enter your email id" id="email-id"
-                                class="input input-bordered" />
+                            <input type="email" placeholder="Enter your email id" id="passenger-email"
+                                class="input input-bordered w-full" required/>
 
                         </div>
                         <div class="form-control mt-6">

@@ -26,8 +26,8 @@ function selectingToBuying(elementId) {
 
       document.getElementById("available").innerText = availableSeat;
       document.getElementById("seat-count").innerText = seatBookingCount;
-      document.getElementById("total-price").innerText = totalPrice;
-      document.getElementById("grand-total").innerText = grandTotal;
+      document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+      document.getElementById("grand-total").innerText = grandTotal.toFixed(2);
 
       const ticketTable = document.getElementById("ticket-table");
       const newRow = document.createElement("tr");
@@ -110,7 +110,7 @@ function validateCoupon(coupon) {
       grandTotal = totalPrice - discountPercentage * totalPrice;
       document.getElementById("grand-total").innerText =
         parseFloat(grandTotal).toFixed(2);
-      const division = document.createElement("div");
+      const division = document.getElementById("discount-amount");
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
       h2.innerText = "Discount";
@@ -118,7 +118,7 @@ function validateCoupon(coupon) {
       h2.classList.add("text-2xl");
       division.appendChild(h2);
       division.appendChild(p);
-      document.getElementById("total-div").appendChild(division);
+      
       division.classList.add(
         "flex",
         "justify-between",
@@ -133,7 +133,7 @@ function validateCoupon(coupon) {
       discountPercentage = 0.2;
       grandTotal = totalPrice - discountPercentage * totalPrice;
       document.getElementById("grand-total").innerText = grandTotal;
-      const division = document.createElement("div");
+      const division = document.getElementById("discount-amount");
       const h2 = document.createElement("h2");
       const p = document.createElement("p");
       h2.innerText = "Discount";
@@ -141,7 +141,6 @@ function validateCoupon(coupon) {
       h2.classList.add("text-2xl");
       division.appendChild(h2);
       division.appendChild(p);
-      document.getElementById("total-div").appendChild(division);
       division.classList.add(
         "flex",
         "justify-between",
@@ -167,12 +166,15 @@ function validateCoupon(coupon) {
 }
 
 document
-  .getElementById("phone-number")
+  .getElementById("passenger-phone")
   .addEventListener("keyup", function (event) {
     const number = event.target.value;
     const stringNumber = String(number);
     const numberLength = stringNumber.length;
     console.log(stringNumber);
+  //   document.getElementById("passenger-name").value=" ";
+  // document.getElementById("passenger-phone").value=" ";
+  // document.getElementById("passenger-email").value=" ";
     const nextButton = document.getElementById("next");
     if (numberLength > 0 && seatBookingCount > 0) {
       nextButton.removeAttribute("disabled");
@@ -181,7 +183,15 @@ document
       nextButton.setAttribute("disabled", true);
     }
   });
-
+document.getElementById("next").addEventListener("click",function () {
+ const name =document.getElementById("passenger-name").value=" ";
+  console.log(name);
+ const phone= document.getElementById("passenger-phone").value=" ";
+ console.log(phone);
+ const email= document.getElementById("passenger-email").value=" ";
+ console.log(email);
+  
+})
 
   function removeBgColorFromButtons() {
     console.log("Removing background color from buttons");
@@ -199,12 +209,12 @@ function startOver() {
   document.getElementById("grand-total").innerText = 0;
   document.getElementById("table-body").innerText=" ";
   removeBgColorFromButtons();
- const parentDiv=  document.getElementById("total-div");
- const lastChild = parentDiv.lastElementChild;
- parentDiv.removeChild(lastChild);
+ document.getElementById("discount-amount").innerText=" ";
   buttonClicked = {};
   availableSeat=40;
   seatBookingCount=0;
+  const nextButton = document.getElementById("next");
+  nextButton.setAttribute("disabled", true);
  
   
   // document.getElementById("passenger-name").value=" ";
