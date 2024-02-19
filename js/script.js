@@ -174,9 +174,6 @@ document
     const stringNumber = String(number);
     const numberLength = stringNumber.length;
     console.log(stringNumber);
-  //   document.getElementById("passenger-name").value=" ";
-  // document.getElementById("passenger-phone").value=" ";
-  // document.getElementById("passenger-email").value=" ";
     const nextButton = document.getElementById("next");
     if (numberLength > 0 && seatBookingCount > 0) {
       nextButton.removeAttribute("disabled");
@@ -185,6 +182,22 @@ document
       nextButton.setAttribute("disabled", true);
     }
   });
+
+  const allButtons = document.querySelectorAll(".buy-button");
+  const nextButton = document.getElementById("next");
+  
+  allButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+          const phoneNumber = document.getElementById("passenger-phone").value;
+          if (phoneNumber.length > 0) {
+              nextButton.removeAttribute("disabled");
+          } else {
+              nextButton.setAttribute("disabled", true);
+          }
+      });
+  });
+  
+
 document.getElementById("next").addEventListener("click",function () {
  const name =document.getElementById("passenger-name").value=" ";
   console.log(name);
@@ -196,7 +209,7 @@ document.getElementById("next").addEventListener("click",function () {
 })
 
   function removeBgColorFromButtons() {
-    console.log("Removing background color from buttons");
+    // console.log("Removing background color from buttons");
     const buttons = document.querySelectorAll(".buy-button");
     buttons.forEach(function(button) {
       button.classList.remove('bg-[#1DD100]');
@@ -216,12 +229,13 @@ function startOver() {
   buttonClicked = {};
   availableSeat=40;
   seatBookingCount=0;
+  discountPercentage=0;
   const nextButton = document.getElementById("next");
   nextButton.setAttribute("disabled", true);
   const discountDiv = document.getElementById("discount-div");
   discountDiv.classList.remove("hidden");
   const couponBtn = document.getElementById("coupon-btn");
-  couponBtn.setAttribute("disabled");
+  
   document.getElementById("passenger-name").value=" ";
   document.getElementById("passenger-phone").value=" ";
   document.getElementById("passenger-email").value=" ";
