@@ -106,9 +106,9 @@ function validateCoupon(coupon) {
   console.log("Coupon length:", length);
   const couponBtn = document.getElementById("coupon-btn");
   const discountDiv = document.getElementById("discount-div");
-  if ((coupon == "New15" || coupon == "Couple 20") && seatBookingCount == 4) {
+  if ((coupon == "NEW15" || coupon == "Couple 20") && seatBookingCount == 4) {
     couponBtn.removeAttribute("disabled");
-    if (coupon == "New15") {
+    if (coupon == "NEW15") {
       discountPercentage = 0.15;
       grandTotal = totalPrice - discountPercentage * totalPrice;
       document.getElementById("grand-total").innerText =
